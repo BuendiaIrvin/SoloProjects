@@ -64,3 +64,91 @@ console.log(helloMessage);
 
 var myName = "Irvin";
 console.log(sayHello(myName));
+
+
+
+/**
+ * TODO:
+ * Create a function called 'isTwo' that takes a number as a parameter.
+ * The function should return a boolean value based on whether or not the passed
+ * number is the number 2.
+ *
+ * Example
+ * > isTwo(1) // returns false
+ * > isTwo(2) // returns true
+ * > isTwo(3) // returns false
+ *
+ * Call the function 'isTwo' passing the variable 'random' as a argument.
+ *
+ * console.log *outside of the function* to check your work (you should see a
+ * different result everytime you refresh the page if you are using the random
+ * number)
+ */
+
+var random = Math.floor((Math.random() * 3) + 1);
+
+function isTwo(x){
+    return x === 2;
+}
+
+
+/// sum of two numbers
+
+function sum(x, y) {
+    return x + y;
+}
+
+console.log(sum(3,5));
+console.log(sum(3,10));
+console.log(sum(25,10));
+
+/// minutes to seconds
+
+
+function minutesToSeconds(x){
+    y = x * 60;
+    return y;
+}
+
+console.log("there is " + minutesToSeconds(1) + " seconds in 1 minute");
+console.log("there is " + minutesToSeconds(2) + " seconds in 2 minutes");
+console.log("there is " + minutesToSeconds(3) + " seconds in 1 minutes");
+console.log("there is " + minutesToSeconds(.5) + " seconds in .5 minutes");
+
+
+// add 1
+
+function addOne(x){
+    return x + 1;
+}
+
+console.log(addOne(9));
+console.log(addOne(99));
+console.log(addOne(999));
+console.log(addOne(9999));
+
+// area of triangle using base and height
+
+function areaTriangle(base, height){
+    product = base * height
+    answer = product / 2;
+    return answer;
+}
+
+console.log(areaTriangle(10,10));
+console.log(areaTriangle(5,10));
+console.log(areaTriangle(25,50));
+console.log(areaTriangle(10,20));
+
+// age in years to days
+
+function yearsToDays(x){
+    return x * 360;
+}
+
+console.log(yearsToDays(10));
+console.log(yearsToDays(20));
+console.log(yearsToDays(30));
+console.log(yearsToDays(26));
+
+//
