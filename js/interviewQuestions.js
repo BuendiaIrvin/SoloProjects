@@ -151,4 +151,21 @@ console.log(yearsToDays(20));
 console.log(yearsToDays(30));
 console.log(yearsToDays(26));
 
-//
+// return first element in array
+
+
+var arr = [1,2,3,4,5];
+var arr2 = [1,2,3,4,5];
+var arr3 = [1,2,3,4,5];
+var arr4 = [1,2,3,4,5];
+
+function getFirstValue(x){
+    first = x[0];
+    return first;
+}
+
+console.log(getFirstValue(getFirstValue(arr)));
+console.log(getFirstValue(getFirstValue(arr2)));
+console.log(getFirstValue(getFirstValue(arr3)));
+console.log(getFirstValue(getFirstValue(arr4)));
+
