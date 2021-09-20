@@ -153,19 +153,56 @@ console.log(yearsToDays(26));
 
 // return first element in array
 
+//
+// var arr = [1,2,3,4,5];
+// var arr2 = [1,2,3,4,5];
+// var arr3 = [1,2,3,4,5];
+// var arr4 = [1,2,3,4,5];
+//
+// function getFirstValue(x){
+//     first = x[0];
+//     return first;
+// }
+//
+// console.log(getFirstValue(getFirstValue(arr)));
+// console.log(getFirstValue(getFirstValue(arr2)));
+// console.log(getFirstValue(getFirstValue(arr3)));
+// console.log(getFirstValue(getFirstValue(arr4)));
 
-var arr = [1,2,3,4,5];
-var arr2 = [1,2,3,4,5];
-var arr3 = [1,2,3,4,5];
-var arr4 = [1,2,3,4,5];
+// Function that reverses a string
 
-function getFirstValue(x){
-    first = x[0];
-    return first;
+function reverseString(s) {
+    const result = [];
+    for (let i= s.length -1; i >= 0; i -= 1) {
+        result.push(s[i]);
+    }
+    return result.join('');
 }
 
-console.log(getFirstValue(getFirstValue(arr)));
-console.log(getFirstValue(getFirstValue(arr2)));
-console.log(getFirstValue(getFirstValue(arr3)));
-console.log(getFirstValue(getFirstValue(arr4)));
+console.log(reverseString("abcde"));
+console.log(reverseString("54321"));
+console.log(reverseString("olleh"));
 
+
+// function that filters out numbers from a list
+
+function filterNumbers(arr) {
+    const result = arr.filter(function(value, i) {
+        if (isNaN(value) || isBoolean(value) || isEmptyString(value) || value === null) {
+            return false;
+        }
+        return true;
+    });
+    return result;
+}
+
+
+function isBoolean(value) {
+    return typeof value === 'boolean';
+}
+
+function isEmptyString(value) {
+    return typeof value === 'string' && value.trim().length === 0;
+}
+
+console.log(filterNumbers([1, "2", " abcde", NaN, Number .POSITIVE_INFINITY, 66, "ab1", false, null]))
