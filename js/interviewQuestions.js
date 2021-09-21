@@ -280,4 +280,5 @@ function flatten(arr=[]) {
     return result;
 }
 
+
 console.info(flatten([[1,2,[3]], 4]));
