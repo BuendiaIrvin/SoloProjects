@@ -243,3 +243,24 @@ let multiplyBy2 = multiplier(2);
 console.info(multiplyBy2(4));
 console.info(multiplyBy2(5));
 
+// function that returns a promise
+
+const resultPromise = function(idea) {
+    return new Promise(function(resolve, reject){
+        if (idea.isGood) {
+            resolve(idea);
+        } else {
+            reject({
+                idea: idea,
+                reason: "Not Realistic"
+            });
+        }
+    });
+};
+
+resultPromise({idea: "Make Gold from Iron", isGood: true})
+.then(function() {
+    console.info("i'm rich!")
+}, function(err) {
+    console.info("Rejected as: " + err.reason);
+});
