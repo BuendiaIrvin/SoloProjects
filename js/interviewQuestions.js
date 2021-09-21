@@ -229,4 +229,17 @@ function linearSearch(arr, x) {
 let arr = [1,3,5,7,9,11,14,18,22];
 console.info("item was found at index: " + linearSearch(arr, 22));
 
-//
+// function that showcases the usage of closures
+
+function multiplier(first) {
+    let a = first;
+    return function(b) {
+        return a * b;
+    };
+}
+
+let multiplyBy2 = multiplier(2);
+
+console.info(multiplyBy2(4));
+console.info(multiplyBy2(5));
+
