@@ -206,3 +206,27 @@ function isEmptyString(value) {
 }
 
 console.log(filterNumbers([1, "2", " abcde", NaN, Number .POSITIVE_INFINITY, 66, "ab1", false, null]))
+
+
+
+
+// function that finds an element inside an unsorted list
+
+function linearSearch(arr, x) {
+    let lo = 0;
+    let hi = arr.length-1;
+
+    while (lo <= hi) {
+        if (arr[lo] === x) {
+            return lo;
+        } else {
+            lo += 1
+        }
+    }
+    return -1;
+}
+
+let arr = [1,3,5,7,9,11,14,18,22];
+console.info("item was found at index: " + linearSearch(arr, 22));
+
+//
