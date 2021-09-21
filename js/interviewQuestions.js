@@ -264,3 +264,20 @@ resultPromise({idea: "Make Gold from Iron", isGood: true})
 }, function(err) {
     console.info("Rejected as: " + err.reason);
 });
+
+
+// function that falttens a list of items
+
+function flatten(arr=[]) {
+    let result = [];
+    for (let item of arr) {
+        if (Array.isArray(item)) {
+            result = result.concat(flatten(item));
+        } else {
+            result = result.concat(item);
+        }
+    }
+    return result;
+}
+
+console.info(flatten([[1,2,[3]], 4]));
