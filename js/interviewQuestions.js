@@ -282,3 +282,27 @@ function flatten(arr=[]) {
 
 
 console.info(flatten([[1,2,[3]], 4]));
+
+
+// write a function that accepts a string and returns a map with the strings character frequency
+
+function computerFrequency(s) {
+    // create freq hashtable
+    const freqTable =  new Map();
+
+    // for each char in the string
+    for (ch of s) {
+        // check if we have seen it already
+        if (!freqTable.set(ch)) {
+            freqTable.set(ch, 1);
+        } else {
+            // just increase the existing entry
+            freqTable.set(ch, freqTable.get(ch) + 1);
+        }
+    }
+    // return result
+    return freqTable;
+}
+
+
+console.info(computerFrequency("abr1aka2tabr3a"));
