@@ -306,3 +306,47 @@ function computerFrequency(s) {
 
 
 console.info(computerFrequency("abr1aka2tabr3a"));
+
+
+
+// Write a function that accepts two numbers and returns both divisons and their modulo
+
+function divMod(a, b) {
+    // be careful for division by zero
+    if (b !== 0 ) {
+        return [a/ b, a % b];
+    }
+    return [0,0];
+}
+
+
+console.info(divMod(16, 5));
+console.info(divMod(20, 0));
+console.info(divMod(20, 5));
+console.info(divMod(25, 25));
+
+
+// Write a function that finds an element inside a sorted list
+
+function binarySearch(arr, x) {
+    let lo  = 0;
+    let hi = arr.length-1;
+    while (lo <= hi) {
+        // find mid element
+        let m = Math.floor((lo + hi) / 2);
+        // check if equal to target
+        if (arr[m] === x) {
+            return m;
+            //reduce array search space by half
+        } else if (arr[m] < x) {
+            lo = m + 1;
+        } else {
+            hi = m - 1;
+        }
+    }
+    // item not found
+    return -1;
+}
+
+let arr = [1,3,5,7,9,11,14,18,22];
+console.info(console.info("item was found at index: " + binarySearch(arr, 22)));
