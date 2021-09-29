@@ -348,5 +348,33 @@ function binarySearch(arr, x) {
     return -1;
 }
 
-let arr = [1,3,5,7,9,11,14,18,22];
+// let arr = [1,3,5,7,9,11,14,18,22];
 console.info(console.info("item was found at index: " + binarySearch(arr, 22)));
+
+
+
+// Write a function that accepts a number and checks if its a prime or not
+
+function isPrime(n) {
+    if (n === 1) {
+        //special case for 1
+        return false;
+    } else {
+        // go through all numgbers from 2 up until n/2
+        for (let i = 2; i <= n / 2; i += 1) {
+            if (n % i === 0) {
+                // we found a number i such as i * x = n so the number is not prime
+                return false;
+            }
+        }
+        // if we get to this point then we know the number is prime
+        return true;
+    }
+}
+
+let num = 45;
+console.info("is " + num + " a prime?: " + isPrime(num));
+num = 37;
+console.info("is " + num + " a prime?: " + isPrime(num));
+num = 73;
+console.info("is " + num + " a prime?: " + isPrime(num));
