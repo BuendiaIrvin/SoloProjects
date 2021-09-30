@@ -378,3 +378,69 @@ num = 37;
 console.info("is " + num + " a prime?: " + isPrime(num));
 num = 73;
 console.info("is " + num + " a prime?: " + isPrime(num));
+
+// Write a function that accepts a list of opbjects with the following type structure
+
+// id: number,
+// accountType: "user" | "admin" | "root"
+// name: string
+
+// the function should return the list of objects grouped by their accountType in this order.
+// list with a list of user followed by a list of admin and a list of root accounts
+
+// Somewhat gewneric group function
+function groupBy(records, keyFunc) {
+    // save groups by key here
+    const groups = new Map();
+    for (record of records) {
+        // we need this call to retrieve that actual key
+        const key = keyFunc(record);
+        if (groups.has(key)) {
+            const data = groups.get(key);
+            data.push(record);
+        } else {
+            groups.set(key, [record]);
+        }
+    }
+    return groups;
+}
+
+function getGroupsByAccountType (records) {
+    const groups = groupBy(records, function(record) {
+        return record.accountType;
+    });
+// return by custom ordering here
+    return [
+        groups.get('user'),
+        groups.get('admin'),
+        groups.get('root'),
+    ]
+}
+console.info(getGroupsByAccountType([
+    {
+        id: 1,
+        accountType: 'user',
+        name: 'Mike'
+    },
+    {
+        id: 2,
+        accountType: 'admin',
+        name: 'Alex'
+    },
+    {
+        id:3,
+        accountType: 'root',
+        name: 'Jordan'
+    },
+    {
+        id: 4,
+        accountType: 'root',
+        name: 'Silas'
+    },
+    {
+        id: 5,
+        accountType: 'admin',
+        name: 'John'
+    },
+]))
+
