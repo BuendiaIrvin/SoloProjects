@@ -12,6 +12,6 @@ button.addEventListener("click",function(){
     const cost = document.querySelector("input");
     console.log(cost.value *0.15);
     let tip = (cost.value *0.15).toFixed(2);
-    let temp = '<h1>You Should tip $' + tip + ' on a $' + cost.value + ' tab. </h1>';
+    let temp = `<h1>You Should tip $${tip} on a $${cost.value} tab. </h1>`;
     output.innerHTML = temp;
 })
